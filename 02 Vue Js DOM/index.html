@@ -12,6 +12,8 @@
         {{ displayTitle() }}
         <a v-bind:href="link">Google</a>
       </p>
+      <!-- Outputting RAW HTML -->
+      <p v-html="linkHTML"></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
