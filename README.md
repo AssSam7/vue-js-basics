@@ -4,9 +4,9 @@
 
 ## Table of contents 📋
 
-1. [First Vue App](#example)
+1. [First Vue App](##first-vue-app)
 
-## First Vue App 🥇
+## First Vue App🥇
 
 Building the the first ever Vue application is quite simple. Follow the following steps
 
