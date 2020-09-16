@@ -14,6 +14,13 @@
       </p>
       <!-- Outputting RAW HTML -->
       <p v-html="linkHTML"></p>
+
+      <!-- Increment the counter on the button click -->
+      <p>{{ counter }}</p>
+      <button v-on:click="incrementCounter">Click</button>
+
+      <!-- Mouse events (Update coordinates) -->
+      <p v-on:mousemove="updateCoords">Coordinates: {{ x }} / {{ y }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
