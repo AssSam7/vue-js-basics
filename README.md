@@ -4,7 +4,7 @@
 
 ## Table of contents 📋
 
-1. [First Vue App](##first-vue-app)
+1. [First Vue App](#first-vue-app)
 
 ## First Vue App🥇
 
