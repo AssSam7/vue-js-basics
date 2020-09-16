@@ -15,8 +15,9 @@ new Vue({
       return `${this.title}`;
     },
 
-    incrementCounter() {
-      this.counter++;
+    incrementCounter(step, e) {
+      this.counter += step;
+      console.log(e.target);
     },
 
     updateCoords(event) {

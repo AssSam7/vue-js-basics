@@ -17,7 +17,7 @@
 
       <!-- Increment the counter on the button click -->
       <p>{{ counter }}</p>
-      <button v-on:click="incrementCounter">Click</button>
+      <button v-on:click="incrementCounter(2, $event)">Click</button>
 
       <!-- Mouse events (Update coordinates) -->
       <p v-on:mousemove="updateCoords">Coordinates: {{ x }} / {{ y }}</p>
