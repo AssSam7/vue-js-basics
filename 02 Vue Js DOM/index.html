@@ -20,7 +20,10 @@
       <button v-on:click="incrementCounter(2, $event)">Click</button>
 
       <!-- Mouse events (Update coordinates) -->
-      <p v-on:mousemove="updateCoords">Coordinates: {{ x }} / {{ y }}</p>
+      <p v-on:mousemove="updateCoords">
+        Coordinates: {{ x }} / {{ y }}
+        <span v-on:mousemove.stop="">DEAD SPOT</span>
+      </p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
