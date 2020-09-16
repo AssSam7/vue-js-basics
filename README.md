@@ -87,4 +87,4 @@ new Vue({
 });
 ```
 
-Using the above code, the **title** data would be the same as the value entered in the input field
+Using the above code, the **title** data would be the same as the value entered in the input field (Two-way data binding)
