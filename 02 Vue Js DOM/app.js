@@ -2,12 +2,13 @@ new Vue({
   el: "#app",
   data: {
     name: "Aslam Mohammed",
-    title: `Hello`,
+    title: "Hello",
     link: "https://www.google.com",
   },
   methods: {
     displayTitle() {
-      return `${this.title} ${this.name}`;
+      this.title = "Hello World";
+      return `${this.title}`;
     },
   },
 });
