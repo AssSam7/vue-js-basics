@@ -24,5 +24,9 @@ new Vue({
       this.x = event.clientX;
       this.y = event.clientY;
     },
+
+    alert() {
+      alert("Hello World!");
+    },
   },
 });

@@ -19,11 +19,14 @@
       <p>{{ counter }}</p>
       <button v-on:click="incrementCounter(2, $event)">Click</button>
 
-      <!-- Mouse events (Update coordinates) -->
+      <!-- Mouse events (Update coordinates) & Event modifiers -->
       <p v-on:mousemove="updateCoords">
         Coordinates: {{ x }} / {{ y }}
         <span v-on:mousemove.stop="">DEAD SPOT</span>
       </p>
+
+      <!-- Key events with modifiers -->
+      <input type="text" v-on:keyup.enter="alert" />
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
