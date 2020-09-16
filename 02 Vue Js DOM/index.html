@@ -27,6 +27,10 @@
 
       <!-- Key events with modifiers -->
       <input type="text" v-on:keyup.enter="alert" />
+
+      <!-- Two-way data binding -->
+      <input type="text" v-model="name" />
+      <p>{{ name }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

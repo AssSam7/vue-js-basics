@@ -1,7 +1,7 @@
 new Vue({
   el: "#app",
   data: {
-    name: "Aslam Mohammed",
+    name: "Aslam MD",
     title: "Hello",
     link: "https://www.google.com",
     linkHTML: `<a href="https://www.linkedin.com">Linkedin</a>`,
