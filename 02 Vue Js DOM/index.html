@@ -3,42 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Vue Js DOM</title>
   </head>
   <body>
     <div id="app">
-      <h1 v-once>{{ title }}</h1>
+      <!-- <h1 v-once>{{ title }}</h1>
       <p>
         {{ displayTitle() }}
         <a href="link">Google</a>
-      </p>
+      </p> -->
       <!-- Outputting RAW HTML -->
-      <p v-html="linkHTML"></p>
+      <!-- <p v-html="linkHTML"></p> -->
 
       <!-- Increment the counter on the button click -->
-      <p>{{ counter }}</p>
-      <button v-on:click="incrementCounter(2, $event)">Click</button>
+      <!-- <p>{{ counter }}</p>
+      <button v-on:click="incrementCounter(2, $event)">Click</button> -->
 
       <!-- Mouse events (Update coordinates) & Event modifiers -->
-      <p v-on:mousemove="updateCoords">
+      <!-- <p v-on:mousemove="updateCoords">
         Coordinates: {{ x }} / {{ y }}
         <span v-on:mousemove.stop="">DEAD SPOT</span>
       </p>
 
       <!-- Key events with modifiers -->
-      <input type="text" v-on:keyup.enter="alert" />
+      <!-- <input type="text" v-on:keyup.enter="alert" /> -->
 
       <!-- Two-way data binding -->
-      <input type="text" v-model="name" />
-      <p>{{ name }}</p>
+      <!-- <input type="text" v-model="name" />
+      <p>{{ name }}</p> -->
 
       <!-- Computed properties -->
-      <button @click="counter++">Increment</button>
+      <!-- <button @click="counter++">Increment</button>
       <button @click="counter--">Decrement</button>
-      <button @click="counter2++">Increment</button>
+      <button @click="counter2++">Increment</button> -->
 
-      <p>{{ counter }} | {{ counter2 }}</p>
-      <p>{{ output }}</p>
+      <!-- <p>{{ counter }} | {{ counter2 }}</p>
+      <p>{{ output }}</p> -->
+
+      <!-- Styling CSS (Dynamic) -->
+      <div
+        class="demo"
+        @click="attachRed = !attachRed"
+        :class="{red: attachRed}"
+      ></div>
+      <div
+        class="demo"
+        @click="attachGreen = !attachGreen"
+        :class="{green: attachGreen}"
+      ></div>
+      <div
+        class="demo"
+        @click="attachBlue = !attachBlue"
+        :class="{blue: attachBlue}"
+      ></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
