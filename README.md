@@ -143,3 +143,14 @@ In the latest vue versions of **>2** there is one more directive serving the pur
 <div v-else-if="type === 'C'">C</div>
 <div v-else>Not A/B/C</div>
 ```
+
+### 4. Grouping multiple elements for conditionals
+
+Suppose we want to render multiple elements based on the conditions, instead of attaching v-if for all the elements, wrap all those elements in a <template> tag which is an HTML5 tag which doesn't gets rendered in the DOM, instead the child elements or the content inside the <template> gets added to the DOM.
+
+```html
+<template v-if="show">
+  <p>Hello there!</p>
+  <h1>Heading 1</h1>
+</template>
+```
