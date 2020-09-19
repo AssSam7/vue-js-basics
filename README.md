@@ -106,7 +106,7 @@ Here all the concepts related to the following are covered
 - Dependant properties
 - Dynamic Styling
 
-## Conditionals and Rendering lists ❔
+## Conditionals ❔
 
 ### 1. V-if directive
 
@@ -153,4 +153,24 @@ Suppose we want to render multiple elements based on the conditions, instead of 
   <p>Hello there!</p>
   <h1>Heading 1</h1>
 </template>
+```
+
+## Rendering lists 📋
+
+If we have more complex data like an array or group of objects to render, it can be done by **v-for** directive
+
+### 1. Simple array
+
+Suppose we have the following data
+
+```javascript
+ingredients: ["chicken", "fruits", "cookies"];
+```
+
+We can simple use **v-for** in this way to render a list
+
+```html
+<ul>
+  <li v-for="ing in ingredients">{{ ing }}</li>
+</ul>
 ```

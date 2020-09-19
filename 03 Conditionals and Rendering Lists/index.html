@@ -8,16 +8,9 @@
   <body>
     <!-- Main container -->
     <div id="app">
-      <p>You can see me</p>
-      <p v-show="show">Do you also see me?</p>
-      <button @click="show = !show">Click</button>
-
-      <!-- Grouping multiple elements for conditionals -->
-      <template v-if="show">
-        <p>Hello there!</p>
-        <h1>Aslam</h1>
-        Hi
-      </template>
+      <ul>
+        <li v-for="ing in ingredients">{{ ing }}</li>
+      </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
