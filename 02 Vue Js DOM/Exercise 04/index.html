@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vue Js DOM</title>
+  </head>
+  <body>
+    <div id="exercise">
+      <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+      <div>
+        <button @click="startEffect">Start Effect</button>
+        <div id="effect" :class="alterBetweenHighlightShrink"></div>
+      </div>
+
+      <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+      <div :class="['red', 'blue', 'green']">I got no class :(</div>
+
+      <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+      <div>
+        <input type="text" v-model="classCSS" />
+        <div
+          :style="{width: '250px', height: '250px', margin: '20px'}"
+          :class="classCSS"
+        ></div>
+      </div>
+
+      <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+      <div>
+        <input type="text" v-model="classCSS2" />
+        <input type="text" v-model="applyCSS2" />
+        <div
+          :style="{width: '250px', height: '250px', margin: '20px'}"
+          :class="{highlight: applyCSS2}"
+        ></div>
+      </div>
+
+      <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+      <div>
+        <input type="text" />
+        <div :style="{width: '250px', height: '250px', margin: '20px'}"></div>
+      </div>
+
+      <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+      <div>
+        <button @click="startProgress">Start Progress</button>
+        <div
+          :style="{height: '250px', margin: '20px', backgroundColor: 'gray'}"
+          :style="progressBar"
+        ></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
