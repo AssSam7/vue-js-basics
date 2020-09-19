@@ -88,3 +88,18 @@ new Vue({
 ```
 
 Using the above code, the **title** data would be the same as the value entered in the input field (Two-way data binding)
+
+## Vue Js DOM
+
+Here all the concepts related to the following are covered
+
+- Binding data
+- Binding attributes
+- V-once directive
+- V-html directive
+- Events
+- Passing our own arguments to events
+- Event modifiers
+- Two way data binding
+- Dependant properties
+- Dynamic Styling
