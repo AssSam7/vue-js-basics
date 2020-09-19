@@ -5,6 +5,8 @@
 ## Table of contents 📋
 
 1. [First Vue App](#first-vue-app)
+2. [Vue Js DOM](#vue-js-dom-)
+3. [Vue Conditionals and Rendering Lists](#conditionals-and-rendering-lists-)
 
 ## First Vue App🥇
 
@@ -89,7 +91,7 @@ new Vue({
 
 Using the above code, the **title** data would be the same as the value entered in the input field (Two-way data binding)
 
-## Vue Js DOM
+## Vue Js DOM 🌲
 
 Here all the concepts related to the following are covered
 
@@ -103,3 +105,41 @@ Here all the concepts related to the following are covered
 - Two way data binding
 - Dependant properties
 - Dynamic Styling
+
+## Conditionals and Rendering lists ❔
+
+### 1. V-if directive
+
+In modern applications only at a particular time, few views needs to be shown based on the data returned from the back-end. In Vue, **v-if** directive is here to save us serving its purpose of conditional rendering. It operates on the **truthy** and **falsy** values i.e. if **truthy** show that particular element, **falsy** detaches the whole element from the DOM including the nested elements.
+
+```html
+<p v-if="show">Do you also see me?</p>
+```
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    show: true,
+  },
+});
+```
+
+### 2. V-else directive
+
+Like the **v-if** there is also the **v-else** directive which executes if the **v-if** returns the **falsy** value. It is inherited from the parent if condition, i.e. cannot stand independantly.
+
+```html
+<p v-else>Do you also see me?</p>
+```
+
+### 3. V-else-if directive
+
+In the latest vue versions of **>2** there is one more directive serving the purpose of **else-if** conditions
+
+```html
+<div v-if="type === 'A'">A</div>
+<div v-else-if="type === 'B'">B</div>
+<div v-else-if="type === 'C'">C</div>
+<div v-else>Not A/B/C</div>
+```
