@@ -9,7 +9,7 @@
     <!-- Main container -->
     <div id="app">
       <ul>
-        <li v-for="ing in ingredients">{{ ing }}</li>
+        <li v-for="(ing, i) in ingredients">{{ ing }} ({{ i }})</li>
       </ul>
     </div>
 

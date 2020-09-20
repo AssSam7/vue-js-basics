@@ -6,7 +6,8 @@
 
 1. [First Vue App](#first-vue-app)
 2. [Vue Js DOM](#vue-js-dom-)
-3. [Vue Conditionals and Rendering Lists](#conditionals-and-rendering-lists-)
+3. [Vue Conditionals](#conditionals-)
+4. [Rendering Lists](#rendering-lists-)
 
 ## First Vue App🥇
 
@@ -172,5 +173,18 @@ We can simple use **v-for** in this way to render a list
 ```html
 <ul>
   <li v-for="ing in ingredients">{{ ing }}</li>
+</ul>
+```
+
+### 2. Getting the index
+
+We can use paranthesis and give 2 arguments (The following order is important)
+
+1. The array property or value
+2. Index
+
+```html
+<ul>
+  <li v-for="(ing, i) in ingredients">{{ ing }} ({{ i }})</li>
 </ul>
 ```
