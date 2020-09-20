@@ -214,4 +214,16 @@ We can loop through the array of objects in the following way
 </ul>
 ```
 
-Firstly looping through every object and looping through the keys and values of that object
+Firstly looping through every object and then looping through the keys and values of that object
+
+### 5. List of numbers
+
+Suppose you want to output all the numbers from 1 to 10, it is pretty easy in Vue JS
+
+```html
+<ul v-for="n in 10">
+  <li>{{ n }}</li>
+</ul>
+```
+
+**10** above represents not just the **number** 10 but the **range** or the **outbound** value starting from 1
