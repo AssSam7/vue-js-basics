@@ -29,7 +29,7 @@
 
       <!-- 4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this) -->
       <ul v-for="(value, key) in testData">
-        <li v-if="typeof value === 'object'">
+        <li v-if="Array.isArray(value)">
           {{ key }}
           <ul>
             <li v-for="val in value">{{ val }}</li>
