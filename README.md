@@ -188,3 +188,12 @@ We can use paranthesis and give 2 arguments (The following order is important)
   <li v-for="(ing, i) in ingredients">{{ ing }} ({{ i }})</li>
 </ul>
 ```
+
+### 3. Alternative V-for (Template tag)
+
+Similar to v-if, v-for can also be used on the template tag to output the data into different elements. For Ex: data into an element and index into another element. Here unline v-if alternative, v-for is used in the template tag itself.
+
+<template v-for="(ing, i) in ingredients">
+  <h1>{{ ing }}</h1>
+  <h2>{{ i }}</h2>
+</template>

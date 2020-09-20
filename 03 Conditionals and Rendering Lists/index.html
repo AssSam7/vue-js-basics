@@ -11,6 +11,11 @@
       <ul>
         <li v-for="(ing, i) in ingredients">{{ ing }} ({{ i }})</li>
       </ul>
+
+      <template v-for="(ing, i) in ingredients">
+        <h1>{{ ing }}</h1>
+        <h2>{{ i }}</h2>
+      </template>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
