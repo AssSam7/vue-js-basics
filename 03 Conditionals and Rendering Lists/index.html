@@ -9,13 +9,12 @@
     <!-- Main container -->
     <div id="app">
       <ul>
-        <li v-for="(ing, i) in ingredients">{{ ing }} ({{ i }})</li>
+        <li v-for="person in persons">
+          <div v-for="(value, key, index) in person">
+            {{ key }}:{{ value }} ({{ index }})
+          </div>
+        </li>
       </ul>
-
-      <template v-for="(ing, i) in ingredients">
-        <h1>{{ ing }}</h1>
-        <h2>{{ i }}</h2>
-      </template>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

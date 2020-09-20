@@ -193,7 +193,25 @@ We can use paranthesis and give 2 arguments (The following order is important)
 
 Similar to v-if, v-for can also be used on the template tag to output the data into different elements. For Ex: data into an element and index into another element. Here unline v-if alternative, v-for is used in the template tag itself.
 
+```html
 <template v-for="(ing, i) in ingredients">
   <h1>{{ ing }}</h1>
   <h2>{{ i }}</h2>
 </template>
+```
+
+### 4. Looping through the objects (Array of objects)
+
+We can loop through the array of objects in the following way
+
+```html
+<ul>
+  <li v-for="person in persons">
+    <div v-for="(value, key, index) in person">
+      {{ key }}:{{ value }} ({{ index }})
+    </div>
+  </li>
+</ul>
+```
+
+Firstly looping through every object and looping through the keys and values of that object
