@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Conditionals & Lists Renderings</title>
+  </head>
+  <body>
+    <!-- Main container -->
+    <div id="exercise">
+      <!-- 1) Hook up the button to toggle the display of the two paragraphs. Use both v-if and v-show and inspect the elements to see the difference -->
+      <div>
+        <button @click="show = !show">Toggle</button>
+        <p v-if="show">You either see me ...</p>
+        <p v-else>...or me</p>
+        <p v-if="show">You either see me ...</p>
+        <p v-else>...or me</p>
+      </div>
+
+      <!-- 2) Output an <ul> of array elements of your choice. Also print the index of each element. -->
+      <ul v-for="(arr, i) in array">
+        <li>{{ i }} - {{ arr }}</li>
+      </ul>
+
+      <!-- 3) Print all key-value pairs of the following object: {title: 'Lord of the Rings', author: 'J.R.R. Tolkiens', books: '3'}. Also print the index of each item. -->
+      <ul v-for="(value, key, index) in myObject">
+        <li>{{ key }}:{{ value }} ({{ index }})</li>
+      </ul>
+
+      <!-- 4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this) -->
+      <ul v-for="(value, key) in testData">
+        <li v-if="typeof value === 'object'">
+          {{ key }}
+          <ul>
+            <li v-for="val in value">{{ val }}</li>
+          </ul>
+        </li>
+        <li v-else>{{ value }}</li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
