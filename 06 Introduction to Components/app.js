@@ -5,7 +5,13 @@ Vue.component("my-cmp", {
       status: "Critical",
     };
   },
-  template: "<p>Server status: {{ status }}</p>",
+  template:
+    "<p>Server status: {{ status }} <button @click='changeStatus'>Change</button></p>",
+  methods: {
+    changeStatus() {
+      this.status = "Normal";
+    },
+  },
 });
 
 new Vue({

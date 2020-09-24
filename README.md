@@ -289,3 +289,4 @@ There are some considerations while creating the components
 
 1. The element which we pass into the first argument can be any HTML element or a custom element but it's advised to use the custom element.
 2. Data property that we pass inside the object is little different from that we pass in the Vue instance. Here we need to pass a function return the object of properties that we need inside the data property to not interfere with the data properties of the Root instance.
+3. Using a local data and passing that data to return from the **data** function of the component causes the problem of the shared data, hence we should return a new object directly from the function instead of using it from locally.
