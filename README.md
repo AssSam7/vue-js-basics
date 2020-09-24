@@ -8,6 +8,7 @@
 2. [Vue Js DOM](#vue-js-dom-)
 3. [Vue Conditionals](#conditionals-)
 4. [Rendering Lists](#rendering-lists-)
+5. [Using Vue CLI](#)
 
 ## First Vue App🥇
 
@@ -227,3 +228,37 @@ Suppose you want to output all the numbers from 1 to 10, it is pretty easy in Vu
 ```
 
 **10** above represents not just the **number** 10 but the **range** or the **outbound** value starting from 1
+
+## Using the Vue CLI 👨‍💻
+
+Moving to a more real-time workflow, creating the vue applications is pretty easy using the CLI tool of the VUE. Here we are the Vue CLI 2 using the **webpack-simple** template to generate a new project.
+
+### 1. Installing the Vue Cli
+
+```bash
+npm install -g vue-cli
+```
+
+### 2. Creating the sample project
+
+Third and fourth arguments are template and name of the project
+
+```bash
+vue init webpack-simple vue-cli
+```
+
+### 3. Installing the dependencies
+
+Go to that newly created project folder and run the following command to install all the required dependencies
+
+```bash
+npm install
+```
+
+### 4. Running the application
+
+This Vue Cli used the webpack for bundling and loading and also serving on the local by spinning up a webpack developement server
+
+```bash
+npm run dev
+```
