@@ -322,3 +322,59 @@ new Vue({
 ```
 
 **Vue.component()** registers the component globally
+
+### 3. Creating Single file templates (Components)
+
+- Go to **src** folder and create your file ending with **.vue** extension
+- A Single file template or more formally known as template consists of 3 things
+
+1. Template tag (One important point is inside template tag only one root element needs to be present i.e. If you have multiple elements wrap all the elements into a div and put that div onto this template)
+2. Script tag with exported object
+3. Style tag (Optional) for CSS stylings
+
+**Home.vue**
+
+```html
+<template>
+  <div>
+    <p>Server status: {{ status }}</p>
+    <hr />
+    <button @click="changeStatus">Change Status</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    data: () => {
+      return {
+        status: "Critical",
+      };
+    },
+    methods: {
+      changeStatus() {
+        this.status = "Normal";
+      },
+    },
+  };
+</script>
+```
+
+### 4. Using the above single file template as a component
+
+- Import the file in the **main.js** as the following
+
+```javascript
+import Home from "./Home.vue";
+```
+
+- Using the above import as a component and binding it to a tag
+
+```javascript
+Vue.component("app-server-status", Home);
+```
+
+- Render the above created tag onto root **App.vue**
+
+```html
+<app-server-status></app-server-status>
+```
