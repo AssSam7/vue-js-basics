@@ -373,8 +373,37 @@ import Home from "./Home.vue";
 Vue.component("app-server-status", Home);
 ```
 
-- Render the above created tag onto root **App.vue**
+- Render the above created tag onto the root **App.vue**
 
 ```html
 <app-server-status></app-server-status>
+```
+
+### 5. Folder Structure
+
+We can use multiple folders for better maintenance of code
+
+1. For small, medium sized applications we can use **Components** folder and place all our Vue files into that
+2. For large scale enterprise applications we can nest folders inside **Components** folder based on shared or feature specific component
+
+### 6. Scoped Style
+
+If we apply the below style on any component, it by default applies it globally instead of applying it to only the current component
+
+```html
+<style>
+  div {
+    border: 1px solid greenyellow;
+  }
+</style>
+```
+
+We should scope the style in the following manner to apply styles locally to only that particular component
+
+```css
+<style scoped>
+div {
+    border: 1px solid greenyellow
+}
+</style>
 ```
