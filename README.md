@@ -8,7 +8,7 @@
 2. [Vue Js DOM](#vue-js-dom-)
 3. [Vue Conditionals](#conditionals-)
 4. [Rendering Lists](#rendering-lists-)
-5. [Using Vue CLI](#)
+5. [Using Vue CLI](#using-the-vue-cli-)
 
 ## First Vue App🥇
 
@@ -262,3 +262,30 @@ This Vue Cli used the webpack for bundling and loading and also serving on the l
 ```bash
 npm run dev
 ```
+
+## Introduction to the Components 🗃️
+
+Components are the re-usable pieces of code which can be used any number of times. Suppose we want to render something to template by adding the element in the **el** property of the Vue instance, but **el** property is like document.querySelector() of javascript which selects the first element of such element in the DOM. Components come to save us in these situations
+
+### 1. Creating a component (Simple)
+
+It accepts two arguments
+
+1. Name of the tag or element to be selected
+2. Object similar to the object we give inside the **Vue** instance
+
+```javascript
+Vue.component("my-cmp", {
+  data() {
+    return {
+      status: "Critical",
+    };
+  },
+  template: "<p>Server status: {{ status }}</p>",
+});
+```
+
+There are some considerations while creating the components
+
+1. The element which we pass into the first argument can be any HTML element or a custom element but it's advised to use the custom element.
+2. Data property that we pass inside the object is little different from that we pass in the Vue instance. Here we need to pass a function return the object of properties that we need inside the data property to not interfere with the data properties of the Root instance.
