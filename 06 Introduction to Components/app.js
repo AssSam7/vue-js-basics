@@ -1,5 +1,5 @@
 // Declaring a new Component
-Vue.component("my-cmp", {
+const comp = {
   data() {
     return {
       status: "Critical",
@@ -12,8 +12,15 @@ Vue.component("my-cmp", {
       this.status = "Normal";
     },
   },
+};
+
+new Vue({
+  el: "#app1",
+  components: {
+    "my-cmp": comp,
+  },
 });
 
 new Vue({
-  el: "#app",
+  el: "#app2",
 });
