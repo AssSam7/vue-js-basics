@@ -9,6 +9,8 @@
 3. [Vue Conditionals](#conditionals-)
 4. [Rendering Lists](#rendering-lists-)
 5. [Using Vue CLI](#using-the-vue-cli-)
+6. [Introduction to the Components](#introduction-to-the-components-)
+7. [Communication between the Components](#communication-between-the-components-)
 
 ## First Vue App🥇
 
@@ -406,4 +408,28 @@ div {
     border: 1px solid greenyellow
 }
 </style>
+```
+
+## Communication between the Components 🤝
+
+When we are using the components be it a small application or an enterprise application, passing the data between the components needs to be there.
+
+### 1. Registering the props to receive the data
+
+When the data is passed between 2 components, be it the parent of child or vice-versa the component which is receiving them needs to register the **props** property through which it can receive the data
+
+```javascript
+export default {
+  props: ["name"],
+};
+```
+
+**Props** is an array and the values passed in the array are the property names passed from the other component (parent). In the above case the array has **name** being passed, so this same **name** is being passed as an attribute from the parent component
+
+### 2. Sending the data
+
+The data properties that are being communicated between the components are passed using the **v-bind** to the attribute it's being passed on
+
+```html
+<app-user-detail :name="name"></app-user-detail>
 ```
