@@ -458,3 +458,28 @@ export default {
   <p>Name: {{ switchName() }}</p>
 </div>
 ```
+
+### 4. Property validation
+
+We can validate whether the data being sent is of a specific type or not
+
+```javascript
+props: {
+  myName: [String, Array];
+}
+```
+
+In the above example, **myName** can be either String or Array
+
+**Advanced Validations**
+
+We can also set a default value
+
+```javascript
+props: {
+  myName: {
+    type: String,
+    default: "AssSam7"
+  };
+}
+```
