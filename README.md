@@ -433,3 +433,28 @@ The data properties that are being communicated between the components are passe
 ```html
 <app-user-detail :name="name"></app-user-detail>
 ```
+
+### 3. Using the received data in the methods
+
+Receive the data from the parent component and reverse the name and render
+
+```javascript
+export default {
+  props: ["myName"],
+  methods: {
+    switchName() {
+      return this.myName.split("").reverse().join("");
+    },
+  },
+};
+```
+
+**Calling the above method**
+
+```html
+<div class="component">
+  <h3>You may view the User Details here</h3>
+  <p>Many Details</p>
+  <p>Name: {{ switchName() }}</p>
+</div>
+```
