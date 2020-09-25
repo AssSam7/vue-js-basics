@@ -483,3 +483,42 @@ props: {
   };
 }
 ```
+
+### 5. Child to Parent Communication using Custom Events
+
+Currently we are changing the name from the parent component and rendering the name in the child component. If we had a usecase to change the name back to original from the child component, we have a emit a custom event that would be listened in the parent component
+
+**Emitting Custom Event**
+
+Since all components are like Vue instance, we can use all the methods here as well which were used in the Vue instance like $data, $refs, $emit etc. **$emit\*\* accepts 2 arguments
+
+- Name of the event
+- Data being passed through this event
+
+```javascript
+export default {
+  props: {
+    myName: String,
+  },
+  methods: {
+    switchName() {
+      return this.myName.split("").reverse().join("");
+    },
+    resetName() {
+      this.myName = "Aslam";
+      this.$emit("nameReset", this.myName);
+    },
+  },
+};
+```
+
+**Listening for the custom event**
+
+Receiving the changed data back to the parent component needs to register an event listener like the below. We can use **v-on** directive, here we're using it's short form syntax **@** and setting the **name** data property to the **\$event** which means the **2nd** argument being passed in the **\$emit** of the child component
+
+```javascript
+<app-user-detail
+  :myName="name"
+  @nameReset="name = $event"
+></app-user-detail>
+```
