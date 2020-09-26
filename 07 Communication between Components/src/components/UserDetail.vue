@@ -4,6 +4,7 @@
     <p>Many Details</p>
     <p>Name: {{ myName }}</p>
     <button @click="resetName">Reset name</button>
+    <button @click="resetFunc">Reset name (Parent)</button>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 export default {
   props: {
     myName: String,
+    resetFunc: Function,
   },
   methods: {
     switchName() {

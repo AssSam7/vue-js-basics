@@ -522,3 +522,41 @@ Receiving the changed data back to the parent component needs to register an eve
   @nameReset="name = $event"
 ></app-user-detail>
 ```
+
+### 6. Communication using call backs
+
+Lets create a **resetName()** method directly in the parent and pass it on to the child
+
+```javascript
+methods: {
+  changeName() {
+    this.name = "AssSam7";
+  },
+  resetName() {
+    this.name = "Aslam";
+  },
+}
+```
+
+```html
+<app-user-detail
+  :myName="name"
+  @nameReset="name = $event"
+  :resetFunc="resetName"
+></app-user-detail>
+```
+
+**Receiving the props of the child component**
+
+```javascript
+props: {
+  myName: String,
+  resetFunc: Function,
+}
+```
+
+**Using the above callback**
+
+```html
+<button @click="resetFunc">Reset name (Parent)</button>
+```
