@@ -579,3 +579,49 @@ editAge() {
 ```html
 <app-user-edit :userAge="age" @ageEdit="age = $event"></app-user-edit>
 ```
+
+### 8. Using the Event Bus for Centralized Communication
+
+The above approach used for the communication between the siblings can get tricky if there are nested child components and it must pass through many other components which is not required all time. For this purpose, event bus is the best and most efficient method which manages the state easily
+
+**Declaring the event bus (main.js)**
+
+It should be declared before our root Vue instance as we're using it inside the components
+
+```javascript
+export const eventBus = new Vue();
+```
+
+The above export is a **Named export** where we are directly exporting the particular object in the form of a new Vue instance
+
+**Sending the data to the sibling (UserEdit.vue)**
+
+1. Import the **eventBus**
+
+```javascript
+import { eventBus } from "../main";
+```
+
+2. Emit the event onto the **eventBus**
+
+```javascript
+eventBus.$emit("ageEdit", this.userAge);
+```
+
+**Receiving the data from the sibling (UserDetail.vue)**
+
+1. Import the **eventBus**
+
+```javascript
+import { eventBus } from "../main";
+```
+
+2. Listening for the events emitted onto the **eventBus**. It is placed on a life cycle hook called **created** where all the components are created before executing the below code
+
+```javascript
+created() {
+  eventBus.$on("ageEdit", (age) => {
+    this.userAge = age;
+  });
+}
+```
