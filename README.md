@@ -560,3 +560,22 @@ props: {
 ```html
 <button @click="resetFunc">Reset name (Parent)</button>
 ```
+
+### 7. Communication between the siblings
+
+The siblings can't be communicated directly, they need to go via the parent to reflect the changed or pass the data to the other sibling components
+
+**Passing the edited age from sibling to parent**
+
+```javascript
+editAge() {
+  this.userAge = 23;
+  this.$emit("ageEdit", this.userAge);
+}
+```
+
+**Receiving the event in the parent**
+
+```html
+<app-user-edit :userAge="age" @ageEdit="age = $event"></app-user-edit>
+```
