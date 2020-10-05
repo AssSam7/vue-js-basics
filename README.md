@@ -625,3 +625,34 @@ created() {
   });
 }
 ```
+
+## Advanced Components Usage ⏰
+
+Here all the advanced stuff related to components are covered like dynamic components, adding the content through slots etc.
+
+### 1. Adding the content through slots
+
+Suppose a raw HTML needs to be passed onto the child components which is tough when done through the naive **props** technique. Here comes the slots to save us
+
+**Parent component (Sending)**
+
+We can add the HTML inside the tag of the child component to send that
+
+```html
+<app-quote>
+  <h1>Aslams Musings</h1>
+  <p>Parent to children</p>
+</app-quote>
+```
+
+**Child components (Receiving)**
+
+In order to receive the HTML(data) just add the **<slot>** tag inside the child template
+
+```html
+<template>
+  <div>
+    <slot></slot>
+  </div>
+</template>
+```
