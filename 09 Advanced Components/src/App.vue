@@ -3,8 +3,9 @@
     <div class="row">
       <div class="col-xs-12">
         <app-quote>
-          <h1>{{ quoteTitle }}</h1>
-          <p>Parent to children</p>
+          <h1 slot="title">{{ quoteTitle }}</h1>
+          <h2 slot="title">{{ quoteTitle }}</h2>
+          <p slot="content">Parent to children</p>
         </app-quote>
       </div>
     </div>
@@ -26,4 +27,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  color: rebeccapurple;
+}
+
+p {
+  font-size: 2rem;
+}
+</style>

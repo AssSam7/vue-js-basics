@@ -1,6 +1,12 @@
 <template>
   <div>
-    <slot></slot>
+    <div class="title">
+      <slot name="title"></slot>
+    </div>
+
+    <div class="content">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 
@@ -18,7 +24,7 @@ div {
   text-align: center;
 }
 
-h1 {
-  color: palevioletred;
+.title {
+  font-style: italic;
 }
 </style>

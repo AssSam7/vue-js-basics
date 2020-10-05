@@ -659,8 +659,50 @@ In order to receive the HTML(data) just add the **<slot>** tag inside the child 
 
 ### 2. Slot Content Compilation and Styling
 
-Two key takeaways
+Two key takeaways (Previous)
 
 1. The HTML being passed from parent to child can only be styled in the child component as it's already passed from the parent.
 
 2. Except the styling everything else regarding the template being passed can be done from the parent.
+
+**Latest Update**
+
+1. Everything can be done with in the parent component regarding the template being passed.
+
+### 3. Using Multiple slots
+
+Multiple slots can be used to use the HTML being sent at different places of the component
+
+**Naming them in the child**
+
+```html
+<template>
+  <div>
+    <div class="title">
+      <slot name="title"></slot>
+    </div>
+
+    <div class="content">
+      <slot name="content"></slot>
+    </div>
+  </div>
+</template>
+```
+
+**Sending them according to the names**
+
+```html
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-quote>
+          <h1 slot="title">{{ quoteTitle }}</h1>
+          <h2 slot="title">{{ quoteTitle }}</h2>
+          <p slot="content">Parent to children</p>
+        </app-quote>
+      </div>
+    </div>
+  </div>
+</template>
+```
