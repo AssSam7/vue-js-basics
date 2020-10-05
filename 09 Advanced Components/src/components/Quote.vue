@@ -17,4 +17,8 @@ div {
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+
+h1 {
+  color: palevioletred;
+}
 </style>

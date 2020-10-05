@@ -656,3 +656,11 @@ In order to receive the HTML(data) just add the **<slot>** tag inside the child 
   </div>
 </template>
 ```
+
+### 2. Slot Content Compilation and Styling
+
+Two key takeaways
+
+1. The HTML being passed from parent to child can only be styled in the child component as it's already passed from the parent.
+
+2. Except the styling everything else regarding the template being passed can be done from the parent.
