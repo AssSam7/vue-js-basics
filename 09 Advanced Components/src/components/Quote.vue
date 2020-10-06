@@ -2,7 +2,7 @@
   <div>
     <div class="title">
       <slot name="title"></slot>
-      <span><slot name="subtitle">Slot default</slot></span>
+      <span><slot name="subtitle">Slot defaultsss</slot></span>
     </div>
 
     <div class="content">

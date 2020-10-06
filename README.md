@@ -742,3 +742,27 @@ Here we are switching the components using the dynamic components, while switchi
   </component>
 </keep-alive>
 ```
+
+### 5. Life cycle hooks (Dynamic components)
+
+Suppose we want to persist the life cycle hooks before the **keep-alive**, for this case we get 2 life cycle hooks of dynamic components
+
+1. Activated
+
+This hook gets triggered whenever the component gets loaded
+
+```javascript
+activated() {
+    console.log("Activated!");
+  }
+```
+
+2. Deactivated
+
+This hook gets triggered whenever the component is switched away
+
+```javascript
+deactivated() {
+  console.log("Deactivated!");
+}
+```

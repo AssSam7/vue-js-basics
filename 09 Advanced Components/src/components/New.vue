@@ -13,6 +13,12 @@ export default {
       counter: 0,
     };
   },
+  activated() {
+    console.log("Activated!");
+  },
+  deactivated() {
+    console.log("Deactivated!");
+  },
 };
 </script>
 
