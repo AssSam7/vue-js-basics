@@ -7,9 +7,11 @@
         <button @click="selectedComponent = 'appNew'">Show New</button>
         <hr />
         <p>{{ selectedComponent }}</p>
-        <component :is="selectedComponent">
-          <p>Parent to children</p>
-        </component>
+        <keep-alive>
+          <component :is="selectedComponent">
+            <p>Parent to children</p>
+          </component>
+        </keep-alive>
       </div>
     </div>
   </div>

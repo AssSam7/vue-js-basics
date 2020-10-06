@@ -730,3 +730,15 @@ We can change the data with that particular selector based on the buttons
 <button @click="selectedComponent = 'appAuthor'">Show Author</button>
 <button @click="selectedComponent = 'appNew'">Show New</button>
 ```
+
+### 4. Understanding dynamic components
+
+Here we are switching the components using the dynamic components, while switching all the components are re-created again and again when they are passed into the **component** tag using **is** binding. To avoid this, we can wrap our component inside a special Vue reserved tag known as **<keep-alive>**
+
+```html
+<keep-alive>
+  <component :is="selectedComponent">
+    <p>Parent to children</p>
+  </component>
+</keep-alive>
+```
