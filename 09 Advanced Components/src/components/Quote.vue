@@ -2,10 +2,12 @@
   <div>
     <div class="title">
       <slot name="title"></slot>
+      <span><slot name="subtitle">Slot default</slot></span>
     </div>
 
     <div class="content">
-      <slot name="content"></slot>
+      (The default slot)
+      <slot></slot>
     </div>
   </div>
 </template>

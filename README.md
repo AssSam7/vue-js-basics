@@ -706,3 +706,27 @@ Multiple slots can be used to use the HTML being sent at different places of the
   </div>
 </template>
 ```
+
+### 3. Dynamic Components
+
+Suppose we have 3 components **Quote.vue**, **Author.vue** and **New.vue** and we want to dynamically show a particular component based on button clicks, Here we have to use a dynamic component where we pass the **selector** dynamically based on the button clicks
+
+**Registering a dynamic component**
+
+Here we have to bind the **is** property with the raw selector tag or we can use the data property which gets changed on button click
+
+```html
+<component :is="selectedComponent">
+  <p>Parent to children</p>
+</component>
+```
+
+**Changing the data on button clicks**
+
+We can change the data with that particular selector based on the buttons
+
+```html
+<button @click="selectedComponent = 'appQuote'">Show Quote</button>
+<button @click="selectedComponent = 'appAuthor'">Show Author</button>
+<button @click="selectedComponent = 'appNew'">Show New</button>
+```
