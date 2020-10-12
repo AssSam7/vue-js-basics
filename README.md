@@ -11,6 +11,7 @@
 5. [Using Vue CLI](#using-the-vue-cli-)
 6. [Introduction to the Components](#introduction-to-the-components-)
 7. [Communication between the Components](#communication-between-the-components-)
+8. [Handling forms](#handling-forms-)
 
 ## First Vue App🥇
 
@@ -765,4 +766,28 @@ This hook gets triggered whenever the component is switched away
 deactivated() {
   console.log("Deactivated!");
 }
+```
+
+## Handling forms 📝
+
+Forms form a crucial part of UX and are the means of communication between the user and the server
+
+### 1. Basic form handling using v-model
+
+We have seen this before like for the two-way data binding **v-model** does the job and everything is handled internally
+
+**Creating the data property**
+
+```javascript
+data() {
+    return {
+      email: "",
+    };
+  }
+```
+
+**Binding to the HTML(v-model)**
+
+```html
+<input type="text" id="email" class="form-control" v-model="email" />
 ```
