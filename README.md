@@ -885,3 +885,48 @@ By default, when radio inputs are added our application cannot figure out that o
 
 <input type="radio" id="female" value="Female" v-model="gender" />
 ```
+
+### 7. Drop downs with select and option
+
+We can dynamically populate the drop down values in the following manner
+
+**Array**
+
+```javascript
+priorities: ["High", "medium", "low"];
+```
+
+**V-for through the above array**
+
+```javascript
+<option
+  v-for="(priority, index) in priorities"
+  :key="index"
+>
+  {{ priority }}
+</option>
+```
+
+We can provide or select the default values in two ways
+
+**a. Using selected condition**
+
+```html
+<option
+  v-for="(priority, index) in priorities"
+  :selected="priority === 'low'"
+  :key="index"
+>
+  {{ priority }}
+</option>
+```
+
+**b. Binding the drop down using v-model to select tag**
+
+```html
+<select id="priority" class="form-control" v-model="selectedPriority">
+  ...
+</select>
+```
+
+Although both of the above are provided, v-model overwrites with the data
