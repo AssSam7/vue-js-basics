@@ -822,3 +822,16 @@ data() {
 
 <input type="number" id="age" class="form-control" v-model="user.age" />
 ```
+
+### 3. Input modifiers
+
+Suppose we want to change the way **v-model** updates the data, by default it updates on every key stroke but we want it to update on just **change** i.e. it updates whenever user finishes typing and the value is changed
+
+```html
+<input type="number" id="age" class="form-control" v-model.lazy="user.age" />
+```
+
+There are other modifiers like
+
+- trim: To remove whitespaces
+- number: To convert to a number
