@@ -875,3 +875,13 @@ Based on the check and uncheck, it addes and removes it from the array
 ```javascript
 sendMail: [];
 ```
+
+### 6. Handling the radio buttons
+
+By default, when radio inputs are added our application cannot figure out that only one must be selected. Thanks to Vue, if you bind all the radio buttons to the same data property the purpose is served and the value is stored indeed
+
+```html
+<input type="radio" id="male" value="Male" v-model="gender" />
+
+<input type="radio" id="female" value="Female" v-model="gender" />
+```
