@@ -13,7 +13,8 @@
               type="text"
               id="email"
               class="form-control"
-              v-model="user.email"
+              :value="user.email"
+              @input="user.email = $event.target.value"
             />
           </div>
           <div class="form-group">
@@ -145,7 +146,7 @@ export default {
   data() {
     return {
       user: {
-        email: "",
+        email: "mohammadaslamparvez7@gmail.com",
         password: "",
         age: 23,
         message: "Something here",
