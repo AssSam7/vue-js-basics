@@ -854,3 +854,24 @@ By default the data stored is multi-line, while displaying due CSS reset it gets
 ```html
 <p style="white-space: pre">Message: {{ user.message }}</p>
 ```
+
+### 5. Using the checkboxes and populating data to Arrays
+
+We can bind 2 inputs to the same data property then Vue JS merges both the data and stores it
+
+```html
+<input type="checkbox" id="sendmail" value="SendMail" v-model="sendMail" />
+
+<input
+  type="checkbox"
+  id="sendInfomail"
+  value="SendInfoMail"
+  v-model="sendMail"
+/>
+```
+
+Based on the check and uncheck, it addes and removes it from the array
+
+```javascript
+sendMail: [];
+```
