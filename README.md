@@ -835,3 +835,22 @@ There are other modifiers like
 
 - trim: To remove whitespaces
 - number: To convert to a number
+
+### 4. Binding Text areas
+
+Interpolation with the text areas doesn't work like other HTML element. Instead to pass the data or two-way binding we can anyhow use **v-model**
+
+```html
+<textarea
+  id="message"
+  rows="5"
+  class="form-control"
+  v-model="user.message"
+></textarea>
+```
+
+By default the data stored is multi-line, while displaying due CSS reset it gets rendered in a single line. To make it multi-line, simple add the following CSS rule
+
+```html
+<p style="white-space: pre">Message: {{ user.message }}</p>
+```

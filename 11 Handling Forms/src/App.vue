@@ -42,7 +42,12 @@
         >
           <label for="message">Message</label><br />
           <!-- Interpolation between <textarea>{{ test }}</textarea> doesn't work!-->
-          <textarea id="message" rows="5" class="form-control"></textarea>
+          <textarea
+            id="message"
+            rows="5"
+            class="form-control"
+            v-model="user.message"
+          ></textarea>
         </div>
       </div>
       <div class="row">
@@ -102,7 +107,7 @@
             <p>Mail: {{ user.email }}</p>
             <p>Password: {{ user.password }}</p>
             <p>Age: {{ user.age }}</p>
-            <p>Message:</p>
+            <p style="white-space: pre">Message: {{ user.message }}</p>
             <p><strong>Send Mail?</strong></p>
             <ul>
               <li></li>
@@ -125,6 +130,7 @@ export default {
         email: "",
         password: "",
         age: 23,
+        message: "Something here",
       },
     };
   },
