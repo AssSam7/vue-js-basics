@@ -930,3 +930,25 @@ We can provide or select the default values in two ways
 ```
 
 Although both of the above are provided, v-model overwrites with the data
+
+### 8. Custom Inputs and controls
+
+Suppose we don't want to use the HTML5 input and create our own component for the input like a toggle switch. For binding the v-model to custom inputs or components, we need to follow 2 points
+
+**1. Component must accept a prop named value**
+
+```javascript
+props: ["value"];
+```
+
+```html
+<app-switch v-model="dataSwitch"></app-switch>
+```
+
+**2. Component must emit an event input**
+
+```javascript
+switched(isOn) {
+  this.$emit("input", isOn);
+}
+```
