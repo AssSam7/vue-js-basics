@@ -780,14 +780,45 @@ We have seen this before like for the two-way data binding **v-model** does the 
 
 ```javascript
 data() {
-    return {
-      email: "",
-    };
-  }
+  return {
+    email: "",
+  };
+}
 ```
 
 **Binding to the HTML(v-model)**
 
 ```html
 <input type="text" id="email" class="form-control" v-model="email" />
+```
+
+### 2. Grouping data & pre-populating inputs
+
+Instead of using individual data properties for each input, we can use an object of **user** and pass all the inputs as its properties
+
+```javascript
+data() {
+  return {
+    user: {
+      email: "",
+      password: "",
+      age: 23,
+    },
+  };
+}
+```
+
+**Binding them to the template**
+
+```html
+<input type="text" id="email" class="form-control" v-model="user.email" />
+
+<input
+  type="password"
+  id="password"
+  class="form-control"
+  v-model="user.password"
+/>
+
+<input type="number" id="age" class="form-control" v-model="user.age" />
 ```

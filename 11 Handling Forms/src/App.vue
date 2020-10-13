@@ -13,16 +13,26 @@
               type="text"
               id="email"
               class="form-control"
-              v-model="email"
+              v-model="user.email"
             />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" />
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              v-model="user.password"
+            />
           </div>
           <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" class="form-control" />
+            <input
+              type="number"
+              id="age"
+              class="form-control"
+              v-model="user.age"
+            />
           </div>
         </div>
       </div>
@@ -89,9 +99,9 @@
             <h4>Your Data</h4>
           </div>
           <div class="panel-body">
-            <p>Mail: {{ email }}</p>
-            <p>Password:</p>
-            <p>Age:</p>
+            <p>Mail: {{ user.email }}</p>
+            <p>Password: {{ user.password }}</p>
+            <p>Age: {{ user.age }}</p>
             <p>Message:</p>
             <p><strong>Send Mail?</strong></p>
             <ul>
@@ -111,7 +121,11 @@
 export default {
   data() {
     return {
-      email: "",
+      user: {
+        email: "",
+        password: "",
+        age: 23,
+      },
     };
   },
 };
