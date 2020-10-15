@@ -981,7 +981,7 @@ Vue.directive("highlight", {
 <span v-text="'Hello there'" v-highlight></span>
 ```
 
-### 2. Passing arguments to the custom directive
+### 2. Passing value to the custom directive
 
 We can also set the color from outside and pass directly the value in the HTML while binding in the following way
 
@@ -996,4 +996,20 @@ Vue.directive("highlight", {
 
 ```html
 <span v-text="'Hello there'" v-highlight="'green'"></span>
+```
+
+### 3. Passing argument to the custom directive
+
+Similar to value, directive can also accept arguments in the following way
+
+```javascript
+if (binding.arg == "background") {
+  el.style.backgroundColor = binding.value;
+} else {
+  el.style.color = binding.value;
+}
+```
+
+```html
+<span v-text="'Hello there'" v-highlight:background="'red'"></span>
 ```
