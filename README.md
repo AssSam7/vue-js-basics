@@ -1101,3 +1101,33 @@ So the logical flow is
 
 1. Input for first filter **toUpperCase** is non-transformed text
 2. Input for second filter toLowerCase is transformed text i.e. output from the first step
+
+### 3. Computed properties better than filter
+
+Filter gets called everytime the re-rendering happens, its good for single element but when using list or **v-for** it is not the optimal solution. Computed properties are here for savior.
+
+(My usecase is to filter fruits list based on user input)
+
+```javascript
+fruits: ["Apple", "Banana", "Mango", "Papaya", "Orange"],
+filterText: ""
+```
+
+**Creating the computed property**
+
+```javascript
+computed: {
+  filteredFruits() {
+    return this.fruits.filter((el) => el.includes(this.filterText));
+  },
+}
+```
+
+**Now use the computed property instead of original data**
+
+```html
+<input type="text" placeholder="Type a fruit name" v-model="filterText" />
+<ul v-if="filterText">
+  <li v-for="(fruit, index) in filteredFruits" :key="index">{{ fruit }}</li>
+</ul>
+```
