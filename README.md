@@ -1013,3 +1013,24 @@ if (binding.arg == "background") {
 ```html
 <span v-text="'Hello there'" v-highlight:background="'red'"></span>
 ```
+
+### 4. Adding the modifiers
+
+The third property directive can have is a modifiers which modifies the behavior of the directive. Suppose we want to add the style after a delay, we can implement a modifier for this purpose
+
+**Checking if a modifier is attached to the directive**
+
+```javascript
+if (binding.modifiers["delayed"]) {
+  delay = 3000;
+}
+...
+// Set time out
+...
+```
+
+Modifier can be added by **.dot** and the name of the modifier
+
+```html
+<span v-text="'Hello there'" v-highlight:background.delayed="'red'"></span>
+```
