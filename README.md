@@ -13,6 +13,7 @@
 7. [Communication between the Components](#communication-between-the-components-)
 8. [Handling forms](#handling-forms-)
 9. [Vue Directives](#vue-directives-)
+10. [Vue Filters](#vue-filters-)
 
 ## First Vue App🥇
 
@@ -1056,4 +1057,26 @@ It can be accessed like normal javascript object
 let mainColor = binding.value.mainColor,
   secondColor = binding.value.secondColor,
   currentColor = mainColor;
+```
+
+## Vue Filters 🚬
+
+Filters are used to transform the output in the template without manipulating the data
+
+### 1. Creating a local filter
+
+Just like directives or components, filters can also be created locally
+
+```javascript
+filters: {
+  toUpperCase(value) {
+    return value.toUpperCase();
+  }
+}
+```
+
+We can use the **|** symbol to apply the filter, it is similar to **Pipes** in **Angular**
+
+```html
+<p>{{ text | toUpperCase }}</p>
 ```
