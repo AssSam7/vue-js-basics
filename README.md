@@ -12,6 +12,7 @@
 6. [Introduction to the Components](#introduction-to-the-components-)
 7. [Communication between the Components](#communication-between-the-components-)
 8. [Handling forms](#handling-forms-)
+9. [Vue Directives](#vue-directives-)
 
 ## First Vue App🥇
 
@@ -951,4 +952,31 @@ props: ["value"];
 switched(isOn) {
   this.$emit("input", isOn);
 }
+```
+
+## Vue Directives 🎯
+
+Directives are just like components but are small pieces through which we can control the behavior of the elements
+
+### 1. Creating a custom directive (Globally)
+
+Just like components directives can also be created globally in **main.js** file using **Vue.directive()**. It accepts 2 arguments
+
+1. Directive name
+2. Configuration object
+
+```javascript
+Vue.directive("highlight", {
+  bind(el, binding, vnode) {
+    el.style.color = "red";
+  },
+});
+```
+
+**Adding above custom directive**
+
+**Note:** Here v-text is a built-in directive like setting the **textContent** in javascript
+
+```html
+<span v-text="'Hello there'" v-highlight></span>
 ```
