@@ -1080,3 +1080,24 @@ We can use the **|** symbol to apply the filter, it is similar to **Pipes** in *
 ```html
 <p>{{ text | toUpperCase }}</p>
 ```
+
+### 2. Global filters and chaining multiple filters
+
+We can create a global filter using **Vue.filter()** and simple add it or chain any number of filters in the template
+
+```javascript
+Vue.filter("toLowerCase", (value) => {
+  return value.toLowerCase();
+});
+```
+
+**Applying multiple filters**
+
+```html
+<p>{{ text | toUpperCase | toLowerCase }}</p>
+```
+
+So the logical flow is
+
+1. Input for first filter **toUpperCase** is non-transformed text
+2. Input for second filter toLowerCase is transformed text i.e. output from the first step
