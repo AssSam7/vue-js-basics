@@ -14,6 +14,7 @@
 8. [Handling forms](#handling-forms-)
 9. [Vue Directives](#vue-directives-)
 10. [Vue Filters](#vue-filters-)
+11. [Vue Mixins](#vue-mixins-)
 
 ## First Vue App🥇
 
@@ -1130,4 +1131,34 @@ computed: {
 <ul v-if="filterText">
   <li v-for="(fruit, index) in filteredFruits" :key="index">{{ fruit }}</li>
 </ul>
+```
+
+## Vue Mixins 🤝
+
+Suppose we have the same code being used or shared between the components we surpass the **DRY** rule i.e. **Donot Repeat Yourself**, mixins can be used to place the shared code in a separate file and use it as a mixin
+
+**Export the file (Shared code)**
+
+```javascript
+export const fruitMixin = {
+  data() {
+    return {
+      fruits: ["Apple", "Banana", "Mango", "Papaya", "Orange"],
+      filterText: "",
+    };
+  },
+  computed: {
+    filteredFruits() {
+      return this.fruits.filter((el) => el.includes(this.filterText));
+    },
+  },
+};
+```
+
+**Use the above in as many number of components required**
+
+```javascript
+import List from "./List.vue";
+
+mixins: [fruitMixin];
 ```
