@@ -9,7 +9,11 @@
         ></span>
         <p
           v-html="'<div>Hello this is a div</div>'"
-          v-local-highlight:background.delayed.blink="'red'"
+          v-local-highlight:background.delayed.blink="{
+            mainColor: 'red',
+            secondColor: 'green',
+            delay: 500,
+          }"
         ></p>
       </div>
     </div>
@@ -26,8 +30,8 @@ export default {
           delay = 3000;
         }
         if (binding.modifiers["blink"]) {
-          let mainColor = binding.value,
-            secondColor = "blue",
+          let mainColor = binding.value.mainColor,
+            secondColor = binding.value.secondColor,
             currentColor = mainColor;
           setTimeout(() => {
             setInterval(() => {
@@ -39,14 +43,14 @@ export default {
               } else {
                 el.style.color = currentColor;
               }
-            }, 1000);
+            }, binding.value.delay);
           }, delay);
         } else {
           setTimeout(() => {
             if (binding.arg == "background") {
-              el.style.backgroundColor = binding.value;
+              el.style.backgroundColor = binding.value.mainColor;
             } else {
-              el.style.color = binding.value;
+              el.style.color = binding.value.mainColor;
             }
           }, delay);
         }

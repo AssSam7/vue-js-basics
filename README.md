@@ -1034,3 +1034,26 @@ Modifier can be added by **.dot** and the name of the modifier
 ```html
 <span v-text="'Hello there'" v-highlight:background.delayed="'red'"></span>
 ```
+
+### 5. Passing more complex data into values
+
+Value can just not be string, it can also be object or array just like below
+
+```html
+<p
+  v-html="'<div>Hello this is a div</div>'"
+  v-local-highlight:background.delayed.blink="{
+            mainColor: 'red',
+            secondColor: 'green',
+            delay: 500,
+          }"
+></p>
+```
+
+It can be accessed like normal javascript object
+
+```javascript
+let mainColor = binding.value.mainColor,
+  secondColor = binding.value.secondColor,
+  currentColor = mainColor;
+```
