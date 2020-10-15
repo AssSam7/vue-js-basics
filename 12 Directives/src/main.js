@@ -3,7 +3,8 @@ import App from "./App.vue";
 
 Vue.directive("highlight", {
   bind(el, binding, vnode) {
-    el.style.color = "red";
+    // el.style.color = "red";
+    el.style.color = binding.value;
   },
 });
 
